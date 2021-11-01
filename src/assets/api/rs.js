@@ -1,5 +1,5 @@
 // const base = '/api/rbac/'
-const base = process.env.NODE_ENV === 'production' ? '/rbac/': '/api/rbac/'
+const base = process.env.NODE_ENV === 'production' ? '/rbac/' : '/api/rbac/'
 const v1 = `${base}v1/`
 const account = `${v1}account/`
 const action = `${v1}action/`
