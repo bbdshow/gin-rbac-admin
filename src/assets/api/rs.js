@@ -20,8 +20,9 @@ export default {
 
   actionFind: `${action}find`,
   actionList: `${action}list`,
+  actionCreate: `${action}create`,
+  actionUpdate: `${action}update`,
   actionDel: `${action}delete`,
-  actionUpsert: `${action}upsert`,
   actionImport: `${action}import`,
 
   appCreate: `${app}create`,

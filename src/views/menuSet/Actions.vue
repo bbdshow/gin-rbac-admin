@@ -1,7 +1,7 @@
 <template>
   <div class="ubn wd-100 ub-ver">
     <el-input v-model="filterStr" placeholder="关键字" clearable></el-input>
-    <el-checkbox-group v-model="checkList" class="mar-t10">
+    <el-checkbox-group v-model="checkList" class="mar-0">
       <el-checkbox v-for="action of filterList" :key="action.id" :label="action.id" :disabled="action.status==2">{{action.name}} [{{action.method}}]</el-checkbox>
       <br/>
     </el-checkbox-group>

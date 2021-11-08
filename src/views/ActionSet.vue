@@ -69,7 +69,7 @@
           ref="form"
           label-position="top"
         >
-          <el-form-item label="APP" prop="appId">
+          <el-form-item label="APP" prop="appId" v-if="addNew">
             <app-list v-model="dialogData.appId"></app-list>
           </el-form-item>
           <el-form-item label="名称" prop="name">
@@ -162,14 +162,14 @@ export default {
       state.addNew = true
       state.showD = true
     }
-    const modifyClc = ({ appId, method, name, path, status }) => {
-      state.dialogData = { appId, method, name, path, status }
+    const modifyClc = ({ id, method, name, path, status }) => {
+      state.dialogData = { id, method, name, path, status }
       state.addNew = false
       state.showD = true
     }
     const confirmClc = () => {
-      // const portName = state.addNew ? 'appCreate' : 'appUpdate'
-      checkPost('actionUpsert', state.dialogData).then(() => {
+      const portName = state.addNew ? 'actionCreate' : 'actionUpdate'
+      checkPost(portName, state.dialogData).then(() => {
         state.showD = false
       })
     }
