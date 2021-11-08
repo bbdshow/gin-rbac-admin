@@ -45,9 +45,9 @@
           <template v-slot="{row}">{{row.roles.map(item=>item.name).join(',')}}</template>
         </el-table-column>
 
-        <el-table-column label="操作" width="200px">
+        <el-table-column label="操作" width="230px">
           <template v-slot="{row}">
-            <el-button type="text" @click="modifyClc(row)">修改</el-button>
+            <!-- <el-button type="text" @click="modifyClc(row)">修改</el-button> -->
             <el-button type="text" @click="setRoleClc(row)">绑定角色</el-button>
             <el-button type="text" @click="pwdClc(row)">修改密码</el-button>
             <el-button type="text" @click="delClc(row)">删除</el-button>
