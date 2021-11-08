@@ -102,8 +102,8 @@
     <d-box v-model="showPwd" title="修改密码">
       <template #body>
         <el-form :model="dialogData" :rules="rules" ref="formPwd" label-position="top">
-          <el-form-item label="密码" prop="pwd" >
-            <md5-input v-model="dialogData.pwd"></md5-input>
+          <el-form-item label="密码" prop="password" >
+            <md5-input v-model="dialogData.password"></md5-input>
           </el-form-item>
         </el-form>
       </template>
@@ -182,7 +182,7 @@ export default {
       })
     }
     const pwdClc = ({ id }) => {
-      state.dialogData = { id, pwd: '' }
+      state.dialogData = { id, password: '' }
       state.showPwd = true
     }
     const delClc = ({ id }) => {
