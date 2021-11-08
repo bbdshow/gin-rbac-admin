@@ -49,7 +49,7 @@
           <template v-slot="{row}">
             <!-- <el-button type="text" @click="modifyClc(row)">修改</el-button> -->
             <el-button type="text" @click="setRoleClc(row)">绑定角色</el-button>
-            <el-button type="text" @click="pwdClc(row)">修改密码</el-button>
+            <el-button type="text" @click="pwdClc(row)">重置密码</el-button>
             <el-button type="text" @click="delClc(row)">删除</el-button>
           </template>
         </el-table-column>
