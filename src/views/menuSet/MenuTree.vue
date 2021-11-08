@@ -2,7 +2,7 @@
   <el-tree :data="menu" default-expand-all label="name" node-key="id" @node-click="nodeClc" >
     <template #default="{ data }">
       <span class="wd-100">
-        <span>[{{data.sequence}}]  {{ data.name }}</span>
+        <span>[{{data.sequence}}]  {{ data.name }} {{data.status === 1?'':'已限制'}}</span>
         <!-- <span class="mar-l10">
           <el-button type="text" @click="actionClc(data, 'modify')"> 修改 </el-button>
           <el-button type="text" @click="actionClc(data, 'add')" v-if="data.typ === 2"> 新增子页面 </el-button>

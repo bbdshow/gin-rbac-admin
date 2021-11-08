@@ -13,6 +13,9 @@ export default {
     const renderMenuByInfo = (info = []) => {
       const res = []
       for (const menu of info) {
+        if (menu.status !== 1) {
+          continue
+        }
         const path = menu.path
         const type = menu.typ
         const id = menu.id

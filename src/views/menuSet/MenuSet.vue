@@ -44,6 +44,12 @@
               :controls="false"
             ></el-input-number>
           </el-form-item>
+          <el-form-item label="状态" prop="status" v-if="!addNew">
+            <el-select v-model="dialogData.status" >
+              <el-option label="正常" :value="1"></el-option>
+              <el-option label="限制" :value="2"></el-option>
+            </el-select>
+          </el-form-item>
           <el-form-item label="备注" prop="memo">
             <el-input v-model="dialogData.memo"></el-input>
           </el-form-item>
@@ -126,7 +132,8 @@ export default {
         typ: 1,
         sequence: 0,
         memo: '',
-        parentId: 0
+        parentId: 0,
+        status: 1
       }
       state.type = 'add'
       state.showDb = true
@@ -160,7 +167,8 @@ export default {
         path,
         sequence,
         typ,
-        appId
+        appId,
+        status
       } = info
       console.log('menuAction', info)
       state.type = actionType
@@ -176,7 +184,7 @@ export default {
         }
         state.showDb = true
       } else if (actionType === 'modify') {
-        state.dialogData = { id, memo, name, parentId, path, sequence, typ }
+        state.dialogData = { id, memo, name, parentId, path, sequence, typ, status }
         state.showDb = true
       } else if (actionType === 'delete') {
       } else if (actionType === 'action') {

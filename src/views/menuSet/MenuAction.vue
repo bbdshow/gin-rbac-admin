@@ -1,7 +1,7 @@
 <template>
   <div class="ubn wd-100 ub-ver" style="padding:20px;">
     <div class="ubn">菜单管理</div>
-    <div class="ubn mar-t20">{{nodeInfo.path}}</div>
+    <div class="ubn mar-t20">{{nodeInfo.path}} {{nodeInfo.status === 1?'':'已限制'}}</div>
     <el-form inline class="mar-t20">
       <el-form-item>
         <el-button type="primary" :disabled="!menuId" @click="actionClc('modify')">修改页面</el-button>
@@ -69,9 +69,10 @@ export default {
 
     const actionClc = (actionType) => {
       const data = nodeInfo.value
-      console.log(data)
-      const { id, memo, name, parentId, path, sequence, typ, appId } = data
-      content.emit('menuAction', { actionType, id, memo, name, parentId, path, sequence, typ, appId })
+      console.log('==>', data)
+      const { id, memo, name, parentId, path, sequence, typ, appId, status } = data
+      console.log('==> status', status)
+      content.emit('menuAction', { actionType, id, memo, name, parentId, path, sequence, typ, appId, status })
     }
 
     const delClc = () => { // 删除页面
