@@ -1,6 +1,6 @@
 <template>
   <el-checkbox-group v-model="checkList">
-    <el-checkbox v-for="role of list" :label="role.id" :key="role.id">{{role.name}}</el-checkbox>
+    <el-checkbox v-for="role of list" :label="role.id" :key="role.id">{{`[${role.appName}] ${role.name}`}}</el-checkbox>
   </el-checkbox-group>
 </template>
 

@@ -52,6 +52,7 @@ export default {
         if (res?.code === code.SUCCESS) {
           // console.log('login2')
           store.commit('setToken', res.data.token)
+          store.commit('setNickname', res.data.nickname || '')
           getAuth().then(auth => {
             store.commit('setAuth', auth)
             router.replace({ name: 'home' })

@@ -2,6 +2,7 @@
   <div class="ubn wd-100 top ub-ac ub-pj ht-100">
     <div class="ubn">RBAC 管理</div>
     <div class="ubn">
+      <span class="fz-12 mar-r20">{{nickname}}</span>
       <div class="ubn fz-12 canclc mar-r20" @click="freshClc">刷新权限</div>
       <div class="ubn fz-12 canclc" @click="logoutClc">退出登录</div>
     </div>
@@ -13,11 +14,15 @@ import { axiosPost, axiosGet } from '@api/http'
 import code from '@/assets/api/code'
 import { useStore } from 'vuex'
 import { useRouter } from 'vue-router'
+import { reactive, toRefs } from 'vue'
 
 export default {
   setup () {
     const $store = useStore()
     const $router = useRouter()
+    const state = reactive({
+      nickname: $store.state.nickname
+    })
     const logoutClc = () => {
       axiosPost('logout').then((res) => {
         if (res?.code === code.SUCCESS) {
@@ -34,6 +39,7 @@ export default {
       })
     }
     return {
+      ...toRefs(state),
       logoutClc,
       freshClc
     }

@@ -16,7 +16,8 @@ export default {
   accountDel: `${account}delete`,
   accountList: `${account}list`,
   accountPwd: `${account}pwd/reset`,
-  accountUpdate: `${account}role/update`,
+  accountUpdate: `${account}update`,
+  accountRoleUpdate: `${account}role/update`,
 
   actionFind: `${action}find`,
   actionList: `${action}list`,
