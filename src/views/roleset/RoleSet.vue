@@ -32,7 +32,7 @@
         </el-table-column>
         <el-table-column prop="isRoot" label="ROOT">
           <template v-slot="{ row }">{{
-            row.status === 1 ? "是" : "否"
+            row.isRoot === 1 ? "是" : "否"
           }}</template>
         </el-table-column>
         <el-table-column prop="memo" label="备注"></el-table-column>
